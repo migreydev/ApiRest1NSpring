@@ -50,4 +50,11 @@ public class TeamServiceImpI implements TeamServiceI{
 		
 	}
 
+	@Override
+	public void deleteTeam(TeamDTO teamDTO) {
+		Team team = teamRepository.findByName(teamDTO.getName());
+		teamRepository.delete(team);
+		
+	}
+
 }

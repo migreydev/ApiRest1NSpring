@@ -26,6 +26,7 @@ public class Team {
 	@Column(name="nombre")
 	private String name;
 	
+	
 	@OneToMany(mappedBy = "team")
 	private List<Footballer> footballers;
 }

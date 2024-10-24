@@ -9,5 +9,6 @@ public interface TeamServiceI {
 	List<TeamDTO> getAllTeams();
 	TeamDTO getTeamByName (String name);
 	void addTeam(TeamDTO team);
+	void deleteTeam(TeamDTO teamDTO);
 
 }

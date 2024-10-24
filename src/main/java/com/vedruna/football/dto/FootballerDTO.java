@@ -19,7 +19,11 @@ public class FootballerDTO {
 		this.idPlayer = footballer.getIdPlayer();
 		this.name = footballer.getName();
 		this.age = footballer.getAge();
-		this.nameTeam = footballer.getTeam().getName();
+		if(footballer.getTeam() == null || footballer.getTeam().getName() == null) {
+			this.nameTeam = "Sin equipo";
+		}else {
+			this.nameTeam = footballer.getTeam().getName();
+		}
 	}
 	
 }

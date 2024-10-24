@@ -42,6 +42,7 @@ public class FootballerController {
 	@DeleteMapping("/deletePlayer/{namePlayer}")
 	public void deletePlayer(@PathVariable String namePlayer) {
 		FootballerDTO footballer = footballerService.getFootballerByName(namePlayer);
+		footballerService.deleteFootballer(footballer);
 	}
 	
 }

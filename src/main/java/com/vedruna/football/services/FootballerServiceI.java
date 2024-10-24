@@ -1,5 +1,7 @@
 package com.vedruna.football.services;
 
-public class FootballerServiceI {
+public interface FootballerServiceI {
+	
+
 
 }

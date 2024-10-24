@@ -1,5 +1,8 @@
 package com.vedruna.football.services;
 
-public class FootballerServiceImpl {
+import org.springframework.stereotype.Service;
+
+@Service
+public class FootballerServiceImpl implements FootballerServiceI{
 
 }

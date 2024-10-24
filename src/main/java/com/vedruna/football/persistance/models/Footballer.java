@@ -19,7 +19,7 @@ public class Footballer {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="idequipo")
+	@Column(name="idjugador")
 	private int idPlayer;
 	
 	@Column(name="nombre")

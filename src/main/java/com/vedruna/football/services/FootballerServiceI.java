@@ -7,6 +7,7 @@ import com.vedruna.football.dto.FootballerDTO;
 public interface FootballerServiceI {
 	
 	List<FootballerDTO> getAllFootballers();
+	void addFootballer(FootballerDTO footballer);
 	
 	
 

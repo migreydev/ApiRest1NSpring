@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.vedruna.football.dto.TeamDTO;
-import com.vedruna.football.persistance.models.Footballer;
 import com.vedruna.football.persistance.models.Team;
 import com.vedruna.football.persistance.repository.FootballerRepository;
 import com.vedruna.football.persistance.repository.TeamRepository;
@@ -45,8 +44,6 @@ public class TeamServiceImpI implements TeamServiceI{
 		
 		newTeam.setIdTeam(team.getIdTeam());
 		newTeam.setName(team.getName());
-		
-		Footballer footballer = footballerRepository.findByName(team.getName());
 		newTeam.setFootballers(null);
 		
 		teamRepository.save(newTeam);

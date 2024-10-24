@@ -46,6 +46,20 @@ public class FootballerServiceImpl implements FootballerServiceI{
 		footballerRepository.save(newPlayer);
 			
 	}
+
+	@Override
+	public void deleteFootballer(FootballerDTO footballer) {
+		Footballer player = footballerRepository.findByName(footballer.getName());
+		footballerRepository.delete(player);
+	}
+
+	@Override
+	public FootballerDTO getFootballerByName(String name) {
+		Footballer player = footballerRepository.findByName(name);
+		
+		FootballerDTO playerDTO = new FootballerDTO(player);
+		return playerDTO;
+	}
 	
 	
 	

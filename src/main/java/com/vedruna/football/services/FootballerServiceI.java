@@ -8,6 +8,9 @@ public interface FootballerServiceI {
 	
 	List<FootballerDTO> getAllFootballers();
 	void addFootballer(FootballerDTO footballer);
+	FootballerDTO getFootballerByName(String name);
+	void deleteFootballer(FootballerDTO footballer);
+	
 	
 	
 

@@ -7,11 +7,13 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.vedruna.football.dto.FootballerDTO;
+import com.vedruna.football.dto.TeamDTO;
 import com.vedruna.football.services.FootballerServiceImpl;
 
 @RestController
@@ -32,16 +34,17 @@ public class FootballerController {
 		footballerService.addFootballer(footballerDTO);
 	}
 	
-	@PostMapping("/addPlayerTeam/{nameTeam}")
-	public void addPlayerAteam(@PathVariable String nameTeam, @RequestBody FootballerDTO footballerDTO) {
-		footballerDTO.setNameTeam(nameTeam);
-		footballerService.addFootballer(footballerDTO);
+	@PutMapping("/updateFootballer/{idFootballer}")
+	public void addPlayerAteam(@PathVariable int idFootballer, @RequestBody TeamDTO teamDTO) {
+		FootballerDTO footballerDTO = footballerService.getFootballerByidjugador(idFootballer);
+		footballerDTO.setNameTeam(teamDTO.getName());
+		 footballerService.updateFootballer(footballerDTO);
 		
 	}
 	
-	@DeleteMapping("/deletePlayer/{namePlayer}")
-	public void deletePlayer(@PathVariable String namePlayer) {
-		FootballerDTO footballer = footballerService.getFootballerByName(namePlayer);
+	@DeleteMapping("/deletePlayer/{idplayer}")
+	public void deletePlayer(@PathVariable int idplayer) {
+		FootballerDTO footballer = footballerService.getFootballerByidjugador(idplayer);
 		footballerService.deleteFootballer(footballer);
 	}
 	

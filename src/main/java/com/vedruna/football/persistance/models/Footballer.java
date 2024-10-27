@@ -1,5 +1,7 @@
 package com.vedruna.football.persistance.models;
 
+
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -31,5 +33,6 @@ public class Footballer {
 	@ManyToOne
 	@JoinColumn(name = "equipos_idequipo")
 	private Team team;
+	
 
 }

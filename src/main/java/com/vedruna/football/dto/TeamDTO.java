@@ -23,6 +23,7 @@ public class TeamDTO {
 		this.idTeam = team.getIdTeam();
 		this.name = team.getName();
 		this.footballersDto = new ArrayList<>();
+		
 		for (Footballer player : team.getFootballers()) {
             this.footballersDto.add(new FootballerDTO(player));
         }

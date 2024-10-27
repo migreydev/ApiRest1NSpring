@@ -49,7 +49,7 @@ public class FootballerServiceImpl implements FootballerServiceI{
 
 	@Override
 	public void deleteFootballer(FootballerDTO footballer) {
-		Footballer player = footballerRepository.findByName(footballer.getName());
+		Footballer player = footballerRepository.findByidPlayer(footballer.getIdPlayer());
 		footballerRepository.delete(player);
 	}
 
@@ -59,6 +59,26 @@ public class FootballerServiceImpl implements FootballerServiceI{
 		
 		FootballerDTO playerDTO = new FootballerDTO(player);
 		return playerDTO;
+	}
+
+	@Override
+	public FootballerDTO getFootballerByidjugador(int idjugador) {
+		FootballerDTO player = new FootballerDTO(footballerRepository.findByidPlayer(idjugador));
+	
+		return player;
+	}
+
+	@Override
+	public void updateFootballer(FootballerDTO footballer) {
+		Footballer player = footballerRepository.findByidPlayer(footballer.getIdPlayer());
+		player.setName(footballer.getName());
+	    player.setAge(footballer.getAge());
+	    
+	    Team team = teamRepository.findByName(footballer.getNameTeam());
+	    
+	    player.setTeam(team);
+		footballerRepository.save(player);
+		
 	}
 	
 	

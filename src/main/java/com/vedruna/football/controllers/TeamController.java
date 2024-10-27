@@ -36,9 +36,9 @@ public class TeamController {
 		teamService.addTeam(teamDTO);
 	}
 	
-	@DeleteMapping("deleteTeam/{nameTeam}")
-	public void deleteTeam(@PathVariable String nameTeam) {
-		TeamDTO teamDTO = teamService.getTeamByName(nameTeam);
+	@DeleteMapping("deleteTeam/{idTeam}")
+	public void deleteTeam(@PathVariable int idTeam) {
+		TeamDTO teamDTO = teamService.getTeamById(idTeam);
 		teamService.deleteTeam(teamDTO);
 		
 	}
